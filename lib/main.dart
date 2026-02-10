@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:e_commerce_tanta/features/auth/presentation/views/log_in.dart';
 import 'package:e_commerce_tanta/features/home/nav_bar.dart';
-import 'package:e_commerce_tanta/features/home/models/product_model.dart';
 import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as https;
 
@@ -29,7 +29,7 @@ class ECommerceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: NavBar(),
+      home: LoginView(),
     );
   }
 }

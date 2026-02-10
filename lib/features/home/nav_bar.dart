@@ -1,4 +1,4 @@
-import 'package:e_commerce_tanta/features/home/products_view.dart';
+import 'package:e_commerce_tanta/features/products/products_view.dart';
 import 'package:flutter/material.dart';
 
 class NavBar extends StatefulWidget {
