@@ -32,7 +32,8 @@ class ProductDetailesView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.network(
-                      snapshot.data!.thumbnail,
+                      snapshot.data!.thumbnail ??
+                          'https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg',
                       fit: BoxFit.cover,
                     ),
                     SizedBox(
@@ -40,8 +41,8 @@ class ProductDetailesView extends StatelessWidget {
                     ),
                     Text(
                       snapshot.data!.title,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 20,
@@ -49,8 +50,8 @@ class ProductDetailesView extends StatelessWidget {
                     Text(
                       snapshot.data!.description,
                       textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 20,

@@ -8,7 +8,7 @@ class ProductModel {
   final double rating;
   final int stock;
   final String brand;
-  final String thumbnail;
+  final String? thumbnail;
   final List<ReviewModel> reviews;
 
   ProductModel({
