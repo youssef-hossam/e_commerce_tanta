@@ -1,8 +1,9 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:e_commerce_tanta/features/auth/cubit/log_in_cubit.dart';
+import 'package:e_commerce_tanta/features/auth/presentation/cubit/log_in_cubit.dart';
 import 'package:e_commerce_tanta/features/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:e_commerce_tanta/features/auth/presentation/views/widgets/obscure_icon.dart';
 import 'package:e_commerce_tanta/features/home/nav_bar.dart';
+import 'package:e_commerce_tanta/features/products/cubit/productss_cubit.dart';
 import 'package:e_commerce_tanta/features/products/products_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,7 +29,10 @@ class _LoginViewState extends State<LoginView> {
         if (state is LogInSuccess) {
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => ProductsView()),
+              MaterialPageRoute(
+                  builder: (context) => BlocProvider(
+                      create: (context) => ProductsCubit()..getAllProducts(),
+                      child: ProductsView())),
               (route) => false);
         } else if (state is LogInError) {
           AwesomeDialog(
